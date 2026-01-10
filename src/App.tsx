@@ -69,10 +69,6 @@ function LogoMark() {
   )
 }
 
-
-  )
-}
-
 function SectionTitle({ title, highlight }: { title: string; highlight: string }) {
   return (
     <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
