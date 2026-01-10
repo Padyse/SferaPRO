@@ -1,8 +1,9 @@
+import type { ReactNode } from 'react'
 import { ArrowRight, Sparkles, Shield, Bot, MousePointerClick, Zap, Rocket, Globe, Star, ChevronDown } from 'lucide-react'
 
 const TELEGRAM_URL = 'https://t.me/Sfera_ecosystem'
 
-function GradientText({ children }: { children: React.ReactNode }) {
+function GradientText({ children }: { children: ReactNode }) {
   return (
     <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">
       {children}
@@ -10,11 +11,11 @@ function GradientText({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Container({ children }: { children: React.ReactNode }) {
+function Container({ children }: { children: ReactNode }) {
   return <div className="mx-auto w-full max-w-6xl px-6">{children}</div>
 }
 
-function ButtonPrimary({ href, children }: { href: string; children: React.ReactNode }) {
+function ButtonPrimary({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
@@ -26,7 +27,7 @@ function ButtonPrimary({ href, children }: { href: string; children: React.React
   )
 }
 
-function ButtonSecondary({ href, children }: { href: string; children: React.ReactNode }) {
+function ButtonSecondary({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
@@ -41,20 +42,18 @@ function LogoMark() {
   return (
     <div className="flex items-center gap-3 select-none">
       <div className="relative h-8 w-8">
-       <div
-  className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse"
-  style={{ animationDuration: '3.5s' }}
-/>
-
-<div
-  className="absolute -inset-1 rounded-full border border-white/10 animate-spin"
-  style={{ animationDuration: '12s' }}
-/>
-
-<div
-  className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
-  style={{ animationDuration: '18s', animationDirection: 'reverse' }}
-/>
+        <div
+          className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse"
+          style={{ animationDuration: '3.5s' }}
+        />
+        <div
+          className="absolute -inset-1 rounded-full border border-white/10 animate-spin"
+          style={{ animationDuration: '12s' }}
+        />
+        <div
+          className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
+          style={{ animationDuration: '18s', animationDirection: 'reverse' }}
+        />
 
         <div className="absolute inset-[7px] rounded-full bg-slate-950" />
         <div className="absolute inset-[10px] rounded-full bg-gradient-to-br from-fuchsia-300 to-cyan-200" />
@@ -69,7 +68,6 @@ function LogoMark() {
   )
 }
 
-
 function SectionTitle({ title, highlight }: { title: string; highlight: string }) {
   return (
     <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
@@ -77,14 +75,14 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
     </h2>
   )
 }
-function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+
+function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
     <div className={'rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,0,0,0.35)] backdrop-blur-xl ' + className}>
       {children}
     </div>
   )
 }
-
 
 export default function App() {
   return (
@@ -100,15 +98,14 @@ export default function App() {
       <header className="relative">
         <Container>
           {/* Top bar */}
-          <div className="pt-8 md:pt-10 flex items-center justify-between">
+          <div className="flex items-center justify-between pt-8 md:pt-10">
             <LogoMark />
 
-  <nav className="hidden md:flex items-center gap-6 text-sm text-white/65">
-  <a href="#ecosystem" className="hover:text-white">Экосистема</a>
-  <a href="#services" className="hover:text-white">Сервисы</a>
-  <a href="#how" className="hover:text-white">Как начать</a>
-</nav>
-
+            <nav className="hidden items-center gap-6 text-sm text-white/65 md:flex">
+              <a href="#ecosystem" className="hover:text-white">Экосистема</a>
+              <a href="#services" className="hover:text-white">Сервисы</a>
+              <a href="#how" className="hover:text-white">Как начать</a>
+            </nav>
 
             <a
               href={TELEGRAM_URL}
@@ -139,10 +136,7 @@ export default function App() {
               <ButtonPrimary href={TELEGRAM_URL}>
                 <span className="inline-flex items-center gap-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-                    <path
-                      d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z"
-                      fill="currentColor"
-                    />
+                    <path d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z" fill="currentColor" />
                   </svg>
                   Перейти в Telegram
                 </span>
@@ -157,7 +151,7 @@ export default function App() {
                 className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-md hover:bg-white/10"
                 aria-label="Скролл вниз"
               >
-                <ChevronDown className="h-5 w-5 text-white/60 transition group-hover:text-white/80 group-hover:translate-y-[2px]" />
+                <ChevronDown className="h-5 w-5 text-white/60 transition group-hover:translate-y-[2px] group-hover:text-white/80" />
               </a>
             </div>
           </div>
@@ -498,7 +492,7 @@ function MetricCard({
   accent: 'fuchsia' | 'cyan' | 'yellow' | 'purple'
   value: string
   label: string
-  icon: React.ReactNode
+  icon: ReactNode
 }) {
   const accentMap: Record<string, string> = {
     fuchsia: 'from-fuchsia-500/50 to-transparent text-fuchsia-200 ring-fuchsia-300/25',
@@ -509,12 +503,12 @@ function MetricCard({
 
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-      <div className={`inline-flex items-center justify-center rounded-2xl bg-white/5 p-3 ring-1 ${accentMap[accent].split(' ').slice(-1)[0]}`}>
+      <div className={'inline-flex items-center justify-center rounded-2xl bg-white/5 p-3 ring-1 ' + accentMap[accent].split(' ').slice(-1)[0]}>
         <div className={accentMap[accent].split(' ')[2]}>{icon}</div>
       </div>
-      <div className={`mt-4 text-3xl font-semibold ${accentMap[accent].split(' ')[2]}`}>{value}</div>
+      <div className={'mt-4 text-3xl font-semibold ' + accentMap[accent].split(' ')[2]}>{value}</div>
       <div className="mt-2 text-xs text-white/55">{label}</div>
-      <div className={`mt-5 h-[2px] w-full bg-gradient-to-r ${accentMap[accent].split(' ')[0]} ${accentMap[accent].split(' ')[1]}`} />
+      <div className={'mt-5 h-[2px] w-full bg-gradient-to-r ' + accentMap[accent].split(' ')[0] + ' ' + accentMap[accent].split(' ')[1]} />
     </div>
   )
 }
