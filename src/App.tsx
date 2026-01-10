@@ -61,7 +61,9 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
 
 function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,0,0,0.35)] backdrop-blur-xl ${className}`}>
+    <div
+      className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,0,0,0.35)] backdrop-blur-xl ${className}`}
+    >
       {children}
     </div>
   )
@@ -69,7 +71,7 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-slate-950 text-white scroll-smooth">
       {/* background */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_10%,rgba(255,60,247,0.18),transparent_55%),radial-gradient(1000px_600px_at_70%_60%,rgba(0,240,255,0.14),transparent_60%),radial-gradient(900px_500px_at_30%_70%,rgba(122,54,255,0.10),transparent_60%)]" />
@@ -80,8 +82,25 @@ export default function App() {
       {/* HERO */}
       <header className="relative">
         <Container>
-          <div className="pt-16 md:pt-20">
+          {/* Top bar */}
+          <div className="pt-8 md:pt-10 flex items-center justify-between">
             <LogoMark />
+
+            <nav className="hidden md:flex items-center gap-6 text-sm text-white/65">
+              <a href="#ecosystem" className="hover:text-white">Экосистема</a>
+              <a href="#services" className="hover:text-white">Сервисы</a>
+              <a href="#why" className="hover:text-white">Почему</a>
+              <a href="#how" className="hover:text-white">Как начать</a>
+              <a href="#trust" className="hover:text-white">Доверие</a>
+              <a href="#contacts" className="hover:text-white">Контакты</a>
+            </nav>
+
+            <a
+              href={TELEGRAM_URL}
+              className="hidden md:inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white/85 hover:bg-white/10"
+            >
+              Telegram
+            </a>
           </div>
 
           <div className="relative flex min-h-[76vh] flex-col items-center justify-center pb-16 pt-10 text-center md:min-h-[88vh]">
@@ -105,7 +124,10 @@ export default function App() {
               <ButtonPrimary href={TELEGRAM_URL}>
                 <span className="inline-flex items-center gap-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-                    <path d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z" fill="currentColor" />
+                    <path
+                      d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z"
+                      fill="currentColor"
+                    />
                   </svg>
                   Перейти в Telegram
                 </span>
@@ -113,17 +135,22 @@ export default function App() {
               <ButtonSecondary href={TELEGRAM_URL}>Начать использовать</ButtonSecondary>
             </div>
 
+            {/* scroll down */}
             <div className="mt-12 flex items-center justify-center">
-              <div className="flex h-10 w-6 items-end justify-center rounded-full border border-white/15 bg-white/5">
-                <div className="mb-2 h-2 w-1 rounded-full bg-white/40" />
-              </div>
+              <a
+                href="#ecosystem"
+                className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-md hover:bg-white/10"
+                aria-label="Скролл вниз"
+              >
+                <ChevronDown className="h-5 w-5 text-white/60 transition group-hover:text-white/80 group-hover:translate-y-[2px]" />
+              </a>
             </div>
           </div>
         </Container>
       </header>
 
       {/* ECOSYSTEM */}
-      <section className="py-18 md:py-24">
+      <section id="ecosystem" className="py-20 md:py-24">
         <Container>
           <div className="py-4">
             <SectionTitle title="Экосистема" highlight="Sfera" />
@@ -204,7 +231,7 @@ export default function App() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-18 md:py-24">
+      <section id="services" className="py-20 md:py-24">
         <Container>
           <SectionTitle title="Наши" highlight="Сервисы" />
 
@@ -263,7 +290,7 @@ export default function App() {
       </section>
 
       {/* WHY */}
-      <section className="py-18 md:py-24">
+      <section id="why" className="py-20 md:py-24">
         <Container>
           <SectionTitle title="Почему" highlight="Sfera?" />
 
@@ -308,7 +335,7 @@ export default function App() {
       </section>
 
       {/* HOW */}
-      <section className="py-18 md:py-24">
+      <section id="how" className="py-20 md:py-24">
         <Container>
           <SectionTitle title="Как" highlight="начать?" />
           <p className="mt-3 text-center text-sm text-white/55">Три простых шага до начала использования</p>
@@ -354,7 +381,7 @@ export default function App() {
       </section>
 
       {/* TRUST */}
-      <section className="py-18 md:py-24">
+      <section id="trust" className="py-20 md:py-24">
         <Container>
           <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
             Нам <GradientText>доверяют</GradientText>
@@ -371,7 +398,7 @@ export default function App() {
       </section>
 
       {/* CTA */}
-      <section className="py-18 md:py-24">
+      <section className="py-20 md:py-24">
         <Container>
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 text-center shadow-[0_0_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-14">
             <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-r from-fuchsia-500/25 via-purple-500/15 to-cyan-400/20 opacity-60" />
@@ -406,7 +433,7 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 bg-slate-950/40">
+      <footer id="contacts" className="border-t border-white/10 bg-slate-950/40">
         <Container>
           <div className="grid gap-10 py-12 md:grid-cols-4">
             <div className="md:col-span-1">
