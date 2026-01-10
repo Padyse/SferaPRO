@@ -73,7 +73,6 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
     <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
       {title} <GradientText>{highlight}</GradientText>
     </h2>
-  )
 }
 
 function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
