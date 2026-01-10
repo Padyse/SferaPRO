@@ -38,7 +38,6 @@ function ButtonSecondary({ href, children }: { href: string; children: React.Rea
 }
 
 function LogoMark() {
-  function LogoMark() {
   return (
     <div className="flex items-center gap-3 select-none">
       <div className="relative h-8 w-8">
@@ -69,6 +68,7 @@ function LogoMark() {
     </div>
   )
 }
+
 
   )
 }
