@@ -41,14 +41,21 @@ function LogoMark() {
   return (
     <div className="flex items-center gap-3 select-none">
       <div className="relative h-8 w-8">
-        {/* glow */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse" />
+       <div
+  className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse"
+  style={{ animationDuration: '3.5s' }}
+/>
 
-        {/* ring */}
-        <div className="absolute -inset-1 rounded-full border border-white/10 animate-spin" />
+<div
+  className="absolute -inset-1 rounded-full border border-white/10 animate-spin"
+  style={{ animationDuration: '12s' }}
+/>
 
-        {/* sphere */}
-        <div className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin" />
+<div
+  className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
+  style={{ animationDuration: '18s', animationDirection: 'reverse' }}
+/>
+
         <div className="absolute inset-[7px] rounded-full bg-slate-950" />
         <div className="absolute inset-[10px] rounded-full bg-gradient-to-br from-fuchsia-300 to-cyan-200" />
       </div>
