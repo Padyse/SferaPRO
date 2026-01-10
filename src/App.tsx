@@ -79,13 +79,12 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
 }
 function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <div
-      className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,0,0,0.35)] backdrop-blur-xl ${className}`}
-    >
+    <div className={'rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,0,0,0.35)] backdrop-blur-xl ' + className}>
       {children}
     </div>
   )
 }
+
 
 export default function App() {
   return (
