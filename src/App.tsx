@@ -86,14 +86,12 @@ export default function App() {
           <div className="pt-8 md:pt-10 flex items-center justify-between">
             <LogoMark />
 
-            <nav className="hidden md:flex items-center gap-6 text-sm text-white/65">
-              <a href="#ecosystem" className="hover:text-white">Экосистема</a>
-              <a href="#services" className="hover:text-white">Сервисы</a>
-              <a href="#why" className="hover:text-white">Почему</a>
-              <a href="#how" className="hover:text-white">Как начать</a>
-              <a href="#trust" className="hover:text-white">Доверие</a>
-              <a href="#contacts" className="hover:text-white">Контакты</a>
-            </nav>
+  <nav className="hidden md:flex items-center gap-6 text-sm text-white/65">
+  <a href="#ecosystem" className="hover:text-white">Экосистема</a>
+  <a href="#services" className="hover:text-white">Сервисы</a>
+  <a href="#how" className="hover:text-white">Как начать</a>
+</nav>
+
 
             <a
               href={TELEGRAM_URL}
