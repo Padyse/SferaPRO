@@ -41,33 +41,27 @@ function LogoMark() {
   return (
     <div className="flex items-center gap-3 select-none">
       <div className="relative h-8 w-8">
-        {/* glow pulse */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse [animation-duration:3.5s]" />
+        {/* glow */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse" />
 
-        {/* rotating outer ring */}
-        <div className="absolute -inset-1 rounded-full border border-white/10 animate-spin [animation-duration:12s]" />
+        {/* ring */}
+        <div className="absolute -inset-1 rounded-full border border-white/10 animate-spin" />
 
-        {/* rotating gradient shell */}
-        <div className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin [animation-duration:18s] [animation-direction:reverse]" />
-
-        {/* core */}
+        {/* sphere */}
+        <div className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin" />
         <div className="absolute inset-[7px] rounded-full bg-slate-950" />
         <div className="absolute inset-[10px] rounded-full bg-gradient-to-br from-fuchsia-300 to-cyan-200" />
-
-        {/* orbiting dot */}
-        <div className="absolute inset-0 animate-spin [animation-duration:6s]">
-          <div className="absolute left-1/2 -top-[2px] h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-cyan-200 shadow-[0_0_14px_rgba(0,240,255,0.9)]" />
-        </div>
       </div>
 
       <div className="text-xs font-semibold tracking-[0.28em] text-white/80">
-        <span className="inline-block bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent animate-pulse [animation-duration:4s]">
+        <span className="bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent">
           SFERA
         </span>
       </div>
     </div>
   )
 }
+
 
 function SectionTitle({ title, highlight }: { title: string; highlight: string }) {
   return (
