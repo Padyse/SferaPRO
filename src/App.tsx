@@ -70,7 +70,6 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
     </h2>
   )
 }
-
 function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <div
