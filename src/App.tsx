@@ -37,6 +37,7 @@ function ButtonSecondary({ href, children }: { href: string; children: ReactNode
     </a>
   )
 }
+import type { ReactNode } from 'react'
 
 function LogoMark() {
   return (
@@ -54,7 +55,6 @@ function LogoMark() {
           className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
           style={{ animationDuration: '18s', animationDirection: 'reverse' }}
         />
-
         <div className="absolute inset-[7px] rounded-full bg-slate-950" />
         <div className="absolute inset-[10px] rounded-full bg-gradient-to-br from-fuchsia-300 to-cyan-200" />
       </div>
@@ -67,6 +67,7 @@ function LogoMark() {
     </div>
   )
 }
+
 function SectionTitle({ title, highlight }: { title: string; highlight: string }) {
   return (
     <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
@@ -180,7 +181,6 @@ export default function App() {
                     filter: 'blur(0.2px)',
                   }}
                 />
-              ))}
             </div>
 
             <div className="grid w-full grid-cols-3 items-center gap-10">
