@@ -4,11 +4,7 @@ import { ArrowRight, Sparkles, Shield, Bot, MousePointerClick, Zap, Rocket, Glob
 const TELEGRAM_URL = 'https://t.me/Sfera_ecosystem'
 
 function GradientText({ children }: { children: ReactNode }) {
-  return (
-    <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">
-      {children}
-    </span>
-  )
+  return <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">{children}</span>
 }
 
 function Container({ children }: { children: ReactNode }) {
@@ -37,7 +33,6 @@ function ButtonSecondary({ href, children }: { href: string; children: ReactNode
     </a>
   )
 }
-import type { ReactNode } from 'react'
 
 function LogoMark() {
   return (
@@ -47,10 +42,7 @@ function LogoMark() {
           className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse"
           style={{ animationDuration: '3.5s' }}
         />
-        <div
-          className="absolute -inset-1 rounded-full border border-white/10 animate-spin"
-          style={{ animationDuration: '12s' }}
-        />
+        <div className="absolute -inset-1 rounded-full border border-white/10 animate-spin" style={{ animationDuration: '12s' }} />
         <div
           className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
           style={{ animationDuration: '18s', animationDirection: 'reverse' }}
@@ -60,9 +52,7 @@ function LogoMark() {
       </div>
 
       <div className="text-xs font-semibold tracking-[0.28em] text-white/80">
-        <span className="bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent">
-          SFERA
-        </span>
+        <span className="bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent">SFERA</span>
       </div>
     </div>
   )
@@ -73,6 +63,7 @@ function SectionTitle({ title, highlight }: { title: string; highlight: string }
     <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
       {title} <GradientText>{highlight}</GradientText>
     </h2>
+  )
 }
 
 function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
@@ -101,9 +92,15 @@ export default function App() {
             <LogoMark />
 
             <nav className="hidden items-center gap-6 text-sm text-white/65 md:flex">
-              <a href="#ecosystem" className="hover:text-white">Экосистема</a>
-              <a href="#services" className="hover:text-white">Сервисы</a>
-              <a href="#how" className="hover:text-white">Как начать</a>
+              <a href="#ecosystem" className="hover:text-white">
+                Экосистема
+              </a>
+              <a href="#services" className="hover:text-white">
+                Сервисы
+              </a>
+              <a href="#how" className="hover:text-white">
+                Как начать
+              </a>
             </nav>
 
             <a
@@ -127,15 +124,16 @@ export default function App() {
               Цифровая экосистема <br />
               <GradientText>нового поколения</GradientText>
             </h1>
-            <p className="mt-6 max-w-2xl text-sm text-white/60 md:text-base">
-              VPN, нейросети и умные сервисы в одном пространстве
-            </p>
+            <p className="mt-6 max-w-2xl text-sm text-white/60 md:text-base">VPN, нейросети и умные сервисы в одном пространстве</p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
               <ButtonPrimary href={TELEGRAM_URL}>
                 <span className="inline-flex items-center gap-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-                    <path d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z" fill="currentColor" />
+                    <path
+                      d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z"
+                      fill="currentColor"
+                    />
                   </svg>
                   Перейти в Telegram
                 </span>
@@ -162,9 +160,7 @@ export default function App() {
         <Container>
           <div className="py-4">
             <SectionTitle title="Экосистема" highlight="Sfera" />
-            <p className="mt-3 text-center text-sm text-white/55">
-              Не один сервис, а целая экосистема связанных решений для вашего цифрового мира
-            </p>
+            <p className="mt-3 text-center text-sm text-white/55">Не один сервис, а целая экосистема связанных решений для вашего цифрового мира</p>
           </div>
 
           <div className="relative mx-auto mt-12 flex max-w-3xl items-center justify-center">
@@ -180,6 +176,7 @@ export default function App() {
                     filter: 'blur(0.2px)',
                   }}
                 />
+              ))}
             </div>
 
             <div className="grid w-full grid-cols-3 items-center gap-10">
@@ -255,9 +252,15 @@ export default function App() {
               </div>
 
               <div className="mt-5 space-y-3 text-sm text-white/70">
-                <div className="flex items-center gap-3"><Sparkles className="h-4 w-4 text-fuchsia-300" /> Генерация текста и изображений</div>
-                <div className="flex items-center gap-3"><MousePointerClick className="h-4 w-4 text-fuchsia-300" /> Помощь в учёбе и задачах</div>
-                <div className="flex items-center gap-3"><Star className="h-4 w-4 text-fuchsia-300" /> Креатив и эксперименты</div>
+                <div className="flex items-center gap-3">
+                  <Sparkles className="h-4 w-4 text-fuchsia-300" /> Генерация текста и изображений
+                </div>
+                <div className="flex items-center gap-3">
+                  <MousePointerClick className="h-4 w-4 text-fuchsia-300" /> Помощь в учёбе и задачах
+                </div>
+                <div className="flex items-center gap-3">
+                  <Star className="h-4 w-4 text-fuchsia-300" /> Креатив и эксперименты
+                </div>
               </div>
 
               <a
@@ -280,9 +283,15 @@ export default function App() {
               </div>
 
               <div className="mt-5 space-y-3 text-sm text-white/70">
-                <div className="flex items-center gap-3"><Zap className="h-4 w-4 text-cyan-200" /> Быстрый и стабильный интернет</div>
-                <div className="flex items-center gap-3"><MousePointerClick className="h-4 w-4 text-cyan-200" /> Простое подключение</div>
-                <div className="flex items-center gap-3"><Shield className="h-4 w-4 text-cyan-200" /> Безопасность и приватность</div>
+                <div className="flex items-center gap-3">
+                  <Zap className="h-4 w-4 text-cyan-200" /> Быстрый и стабильный интернет
+                </div>
+                <div className="flex items-center gap-3">
+                  <MousePointerClick className="h-4 w-4 text-cyan-200" /> Простое подключение
+                </div>
+                <div className="flex items-center gap-3">
+                  <Shield className="h-4 w-4 text-cyan-200" /> Безопасность и приватность
+                </div>
               </div>
 
               <a
@@ -349,7 +358,9 @@ export default function App() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Card className="relative pt-10">
-              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(0,240,255,0.25)]">1</div>
+              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(0,240,255,0.25)]">
+                1
+              </div>
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 ring-1 ring-cyan-300/25">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-cyan-200" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22 3L11 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -362,7 +373,9 @@ export default function App() {
             </Card>
 
             <Card className="relative pt-10">
-              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(255,60,247,0.25)]">2</div>
+              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(255,60,247,0.25)]">
+                2
+              </div>
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 ring-1 ring-purple-300/25">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-purple-200" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
@@ -375,7 +388,9 @@ export default function App() {
             </Card>
 
             <Card className="relative pt-10">
-              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(255,60,247,0.25)]">3</div>
+              <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-400 text-sm font-bold text-slate-950 shadow-[0_0_30px_rgba(255,60,247,0.25)]">
+                3
+              </div>
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-500/10 ring-1 ring-fuchsia-300/25">
                 <MousePointerClick className="h-6 w-6 text-fuchsia-200" />
               </div>
@@ -429,10 +444,17 @@ export default function App() {
               >
                 Начать сейчас <ArrowRight className="h-4 w-4" />
               </a>
+
               <div className="flex items-center gap-6 text-xs text-white/55">
-                <span className="inline-flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-fuchsia-300" /> Безопасно</span>
-                <span className="inline-flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-cyan-300" /> Быстро</span>
-                <span className="inline-flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-purple-300" /> Надёжно</span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-300" /> Безопасно
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" /> Быстро
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-purple-300" /> Надёжно
+                </span>
               </div>
             </div>
           </div>
@@ -445,16 +467,25 @@ export default function App() {
           <div className="grid gap-10 py-12 md:grid-cols-4">
             <div className="md:col-span-1">
               <LogoMark />
-              <p className="mt-4 text-sm text-white/55">
-                Цифровая экосистема нового поколения. VPN, нейросети и умные сервисы в одном пространстве.
-              </p>
+              <p className="mt-4 text-sm text-white/55">Цифровая экосистема нового поколения. VPN, нейросети и умные сервисы в одном пространстве.</p>
               <div className="mt-6 flex gap-3">
-                <a href={TELEGRAM_URL} className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10" aria-label="Telegram">
+                <a
+                  href={TELEGRAM_URL}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10"
+                  aria-label="Telegram"
+                >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white/80" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4Z" fill="currentColor" />
+                    <path
+                      d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4Z"
+                      fill="currentColor"
+                    />
                   </svg>
                 </a>
-                <a href={TELEGRAM_URL} className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10" aria-label="Email">
+                <a
+                  href={TELEGRAM_URL}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10"
+                  aria-label="Email"
+                >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white/80" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H20V20H4V4Z" stroke="currentColor" strokeWidth="2" />
                     <path d="M4 6L12 13L20 6" stroke="currentColor" strokeWidth="2" />
@@ -471,8 +502,12 @@ export default function App() {
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/40 md:flex-row">
             <div>© 2026 Sfera. Все права защищены.</div>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white/60">Политика конфиденциальности</a>
-              <a href="#" className="hover:text-white/60">Условия использования</a>
+              <a href="#" className="hover:text-white/60">
+                Политика конфиденциальности
+              </a>
+              <a href="#" className="hover:text-white/60">
+                Условия использования
+              </a>
             </div>
           </div>
         </Container>
