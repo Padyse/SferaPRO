@@ -1,10 +1,25 @@
 import type { ReactNode } from 'react'
-import { ArrowRight, Sparkles, Shield, Bot, MousePointerClick, Zap, Rocket, Globe, Star, ChevronDown } from 'lucide-react'
+import {
+  ArrowRight,
+  Sparkles,
+  Shield,
+  Bot,
+  MousePointerClick,
+  Zap,
+  Rocket,
+  Globe,
+  Star,
+  ChevronDown,
+} from 'lucide-react'
 
 const TELEGRAM_URL = 'https://t.me/Sfera_ecosystem'
 
 function GradientText({ children }: { children: ReactNode }) {
-  return <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">{children}</span>
+  return (
+    <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-300 bg-clip-text text-transparent">
+      {children}
+    </span>
+  )
 }
 
 function Container({ children }: { children: ReactNode }) {
@@ -38,11 +53,17 @@ function LogoMark() {
   return (
     <div className="flex items-center gap-3 select-none">
       <div className="relative h-8 w-8">
+        {/* glow */}
         <div
           className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 opacity-70 blur-[10px] animate-pulse"
           style={{ animationDuration: '3.5s' }}
         />
-        <div className="absolute -inset-1 rounded-full border border-white/10 animate-spin" style={{ animationDuration: '12s' }} />
+        {/* ring */}
+        <div
+          className="absolute -inset-1 rounded-full border border-white/10 animate-spin"
+          style={{ animationDuration: '12s' }}
+        />
+        {/* sphere */}
         <div
           className="absolute inset-[2px] rounded-full bg-gradient-to-br from-fuchsia-400 to-cyan-300 animate-spin"
           style={{ animationDuration: '18s', animationDirection: 'reverse' }}
@@ -52,7 +73,9 @@ function LogoMark() {
       </div>
 
       <div className="text-xs font-semibold tracking-[0.28em] text-white/80">
-        <span className="bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent">SFERA</span>
+        <span className="bg-gradient-to-r from-fuchsia-200 via-white to-cyan-200 bg-clip-text text-transparent">
+          SFERA
+        </span>
       </div>
     </div>
   )
@@ -73,7 +96,6 @@ function Card({ children, className = '' }: { children: ReactNode; className?: s
     </div>
   )
 }
-
 
 export default function App() {
   return (
@@ -125,12 +147,21 @@ export default function App() {
               Цифровая экосистема <br />
               <GradientText>нового поколения</GradientText>
             </h1>
-            <p className="mt-6 max-w-2xl text-sm text-white/60 md:text-base">VPN, нейросети и умные сервисы в одном пространстве</p>
+            <p className="mt-6 max-w-2xl text-sm text-white/60 md:text-base">
+              VPN, нейросети и умные сервисы в одном пространстве
+            </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
               <ButtonPrimary href={TELEGRAM_URL}>
                 <span className="inline-flex items-center gap-2">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="opacity-90"
+                  >
                     <path
                       d="M21.8 4.6L2.7 12.3c-1.3.5-1.3 1.2-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.9.8.6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.8-1.6-1.4ZM9.6 15.1l9.9-6.2c.5-.3.9-.1.6.2l-8 7.2-.3 3.1-1.9-6.1c-.2-.6.2-1 .8-1.2Z"
                       fill="currentColor"
@@ -161,25 +192,26 @@ export default function App() {
         <Container>
           <div className="py-4">
             <SectionTitle title="Экосистема" highlight="Sfera" />
-            <p className="mt-3 text-center text-sm text-white/55">Не один сервис, а целая экосистема связанных решений для вашего цифрового мира</p>
+            <p className="mt-3 text-center text-sm text-white/55">
+              Не один сервис, а целая экосистема связанных решений для вашего цифрового мира
+            </p>
           </div>
 
           <div className="relative mx-auto mt-12 flex max-w-3xl items-center justify-center">
             {/* dots */}
             <div className="pointer-events-none absolute inset-0">
-  {Array.from({ length: 10 }).map((_, i) => (
-    <div
-      key={i}
-      className="absolute h-1 w-1 rounded-full bg-white/20"
-      style={{
-        left: `${20 + (i * 7) % 60}%`,
-        top: `${15 + (i * 11) % 70}%`,
-        filter: 'blur(0.2px)',
-      }}
-    />
-  ))}
-</div>
-
+              {Array.from({ length: 10 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute h-1 w-1 rounded-full bg-white/20"
+                  style={{
+                    left: `${20 + (i * 7) % 60}%`,
+                    top: `${15 + (i * 11) % 70}%`,
+                    filter: 'blur(0.2px)',
+                  }}
+                />
+              ))}
+            </div>
 
             <div className="grid w-full grid-cols-3 items-center gap-10">
               {/* left */}
@@ -307,7 +339,7 @@ export default function App() {
         </Container>
       </section>
 
-      {/* WHY */}
+      {/* WHY (можно оставить, просто не в меню) */}
       <section id="why" className="py-20 md:py-24">
         <Container>
           <SectionTitle title="Почему" highlight="Sfera?" />
@@ -404,7 +436,7 @@ export default function App() {
         </Container>
       </section>
 
-      {/* TRUST */}
+      {/* TRUST (можно оставить) */}
       <section id="trust" className="py-20 md:py-24">
         <Container>
           <h2 className="text-center text-3xl font-semibold text-white md:text-4xl">
@@ -446,7 +478,6 @@ export default function App() {
               >
                 Начать сейчас <ArrowRight className="h-4 w-4" />
               </a>
-
               <div className="flex items-center gap-6 text-xs text-white/55">
                 <span className="inline-flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-300" /> Безопасно
@@ -469,7 +500,9 @@ export default function App() {
           <div className="grid gap-10 py-12 md:grid-cols-4">
             <div className="md:col-span-1">
               <LogoMark />
-              <p className="mt-4 text-sm text-white/55">Цифровая экосистема нового поколения. VPN, нейросети и умные сервисы в одном пространстве.</p>
+              <p className="mt-4 text-sm text-white/55">
+                Цифровая экосистема нового поколения. VPN, нейросети и умные сервисы в одном пространстве.
+              </p>
               <div className="mt-6 flex gap-3">
                 <a
                   href={TELEGRAM_URL}
@@ -536,14 +569,19 @@ function MetricCard({
     purple: 'from-purple-400/50 to-transparent text-purple-200 ring-purple-300/25',
   }
 
+  const ringClass = accentMap[accent].split(' ')[3]
+  const textClass = accentMap[accent].split(' ')[2]
+  const gradFrom = accentMap[accent].split(' ')[0]
+  const gradTo = accentMap[accent].split(' ')[1]
+
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-      <div className={'inline-flex items-center justify-center rounded-2xl bg-white/5 p-3 ring-1 ' + accentMap[accent].split(' ').slice(-1)[0]}>
-        <div className={accentMap[accent].split(' ')[2]}>{icon}</div>
+      <div className={'inline-flex items-center justify-center rounded-2xl bg-white/5 p-3 ring-1 ' + ringClass}>
+        <div className={textClass}>{icon}</div>
       </div>
-      <div className={'mt-4 text-3xl font-semibold ' + accentMap[accent].split(' ')[2]}>{value}</div>
+      <div className={'mt-4 text-3xl font-semibold ' + textClass}>{value}</div>
       <div className="mt-2 text-xs text-white/55">{label}</div>
-      <div className={'mt-5 h-[2px] w-full bg-gradient-to-r ' + accentMap[accent].split(' ')[0] + ' ' + accentMap[accent].split(' ')[1]} />
+      <div className={'mt-5 h-[2px] w-full bg-gradient-to-r ' + gradFrom + ' ' + gradTo} />
     </div>
   )
 }
