@@ -74,6 +74,7 @@ function Card({ children, className = '' }: { children: ReactNode; className?: s
   )
 }
 
+
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-white scroll-smooth">
@@ -166,18 +167,19 @@ export default function App() {
           <div className="relative mx-auto mt-12 flex max-w-3xl items-center justify-center">
             {/* dots */}
             <div className="pointer-events-none absolute inset-0">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute h-1 w-1 rounded-full bg-white/20"
-                  style={{
-                    left: `${20 + (i * 7) % 60}%`,
-                    top: `${15 + (i * 11) % 70}%`,
-                    filter: 'blur(0.2px)',
-                  }}
-                />
-              ))}
-            </div>
+  {Array.from({ length: 10 }).map((_, i) => (
+    <div
+      key={i}
+      className="absolute h-1 w-1 rounded-full bg-white/20"
+      style={{
+        left: `${20 + (i * 7) % 60}%`,
+        top: `${15 + (i * 11) % 70}%`,
+        filter: 'blur(0.2px)',
+      }}
+    />
+  ))}
+</div>
+
 
             <div className="grid w-full grid-cols-3 items-center gap-10">
               {/* left */}
